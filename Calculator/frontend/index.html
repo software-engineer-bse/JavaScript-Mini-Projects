@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <form id="calcForm">
+        <label for="number1">Number 1:</label>
+        <input id="number1" name="number1" required><br><br>
+
+        <label for="number2">Number 2:</label>
+        <input id="number2" name="number2" required><br><br>
+
+        <button type="button" onclick="add()">Add</button>
+        <button type="button" onclick="sub('/api/sub')">Subtract</button>
+        <button type="button" onclick="mul('/api/mul')">Multiply</button>
+        <button type="button" onclick="div('/api/div')">Divide</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

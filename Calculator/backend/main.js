@@ -8,7 +8,9 @@ app.use(express.json());
 let number = 0;
 
 function add(number1, number2) {
-    number = number1 + number2;
+    let num1 = Number(number1);
+    let num2 = Number(number2);
+    number = num1 + num2;
     return number;
 }
 
@@ -63,6 +65,26 @@ app.post("/api/mul", (req, res) => {
     res.status(201).json(r);
 });
 
+app.post("/api/div", (req, res)=> {
+    let data = req.body;
+    number = div(data.number1, data.number2);
+
+    const r = {
+        message: "Ok",
+        result: number
+    }
+    res.status(201).json(r);
+});
+
+
+
+app.get('/api/get', (req, res) => {
+
+    data = {
+        number: number
+    }
+    res.status(200).json(data);
+});
 
 
 
